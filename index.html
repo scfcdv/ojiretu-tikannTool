@@ -1,0 +1,34 @@
+<head>
+<link rel="icon" href="https://homeweb2-rmir.vercel.app/favicon.ico">
+<title>文字列置換ツール</title>
+<style>
+body {
+font-family: Arial, sans-serif;
+margin: 20px;}
+textarea {
+width: 100%;
+height: 150px;}
+button {
+padding: 10px 20px;
+font-size: 16px;}
+</style>
+</head>
+<body>
+<label for="originalText">元のテキスト:</label><br>
+<textarea id="originalText" placeholder="テキストを入力してください"></textarea><br>
+<label for="searchText">置き換えする文字:</label>
+<input type="text" id="searchText" placeholder="検索する文字列"><br>
+<label for="replaceText">置き換えた文字:</label>
+<input type="text" id="replaceText" placeholder="置換する文字列"><br>
+<button onclick="replaceText()">置換</button>
+<h2>置換後のテキスト:</h2>
+<div id="resultText"></div>
+<script>
+function replaceText() {
+var originalText = document.getElementById('originalText').value;
+var searchText = document.getElementById('searchText').value;
+var replaceText = document.getElementById('replaceText').value;
+var resultText = originalText.split(searchText).join(replaceText);
+document.getElementById('resultText').innerText = resultText;}
+</script>
+</body>
